@@ -4,4 +4,4 @@
 - TODO: Try if everything works with basic code and easy test
 - TODO: Push it to Github
 
-##Pomodoro 2
+##Pomodoro 
