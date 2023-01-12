@@ -1,4 +1,4 @@
-from kata_3.tictactoe import square
+from kata_3.tictactoe import create_board
 import pytest
 
 
