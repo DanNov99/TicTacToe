@@ -4,4 +4,6 @@
 - TODO: Try if everything works with basic code and easy test
 - TODO: Push it to Github
 
-##Pomodoro 
+## Pomodoro 2
+- TODO: Create function that creates board for game
+- TODO: Test this function
