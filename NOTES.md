@@ -9,3 +9,6 @@
 ~~ - TODO: Test this function ~~
 
 ## Pomodoro 3
+- TODO: Create a test for making random move
+- TODO: Create function for making random move
+- TODO: Make it green 
