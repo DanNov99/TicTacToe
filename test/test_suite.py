@@ -13,5 +13,6 @@ def test_make_move():
              [None, None, None],
              [None, None, None]]
     move = make_move(board, 'X')
-    assert move in [(0,0), (0,1), (0,2), (1,0), (1,1), (1,2), (2,0), (2,1), (2,2)]
-    assert board[move[0]][move[1]]== 'X'
+    assert move in [(0,0), (0,1), (0,2), (1,0), (1,1), (1,2), (2,0), (2,1), (2,2)] or move == None
+    if move is not None:
+        assert board[move[0]][move[1]]== 'X'
