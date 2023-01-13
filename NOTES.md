@@ -9,8 +9,10 @@
 ~~ - TODO: Test this function ~~
 
 ## Pomodoro 3
-~~ - TODO: Create a test for making random move ~~
-~~ - TODO: Create function for making random move ~~
+~~ - TODO: Create a test for making random move from available spots on the board ~~
+~~ - TODO: Create function for making random move from available spots on the board~~
 ~~ - TODO: Make it green ~~
 
 ## Pomodoro 4
+- TODO: Create test and function that picks valid move based on available spots
+- TODO: Make it green 
