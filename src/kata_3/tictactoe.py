@@ -11,3 +11,6 @@ def make_move(board,player):
     x,y = move
     board[x][y] = player
     return move
+
+def win_or_draw():
+    pass

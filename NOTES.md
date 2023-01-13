@@ -14,5 +14,9 @@
 ~~ - TODO: Make it green ~~
 
 ## Pomodoro 4
-- TODO: Create test and function that picks valid move based on available spots
+~~ - TODO: Create test and function that picks valid move based on available spots ~~ 
+~~ - TODO: Make it green ~~ 
+
+## Pomodoro 5
+- TODO: Create test and function that decides if there is a winner or is it a draw
 - TODO: Make it green 
