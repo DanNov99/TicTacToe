@@ -1,4 +1,4 @@
-from kata_3.tictactoe import create_board, make_move, win_or_draw
+from kata_3.tictactoe import create_board, make_move, win_or_draw, play_game
 import pytest
 
 
@@ -35,3 +35,10 @@ def test_win_or_draw():
              ['O', 'X', 'X']]
     winner = win_or_draw(board)
     assert winner == None
+
+def test_play_game():
+    board = [['X', ' ', ' '],
+             [' ', ' ', ' '],
+             [' ', ' ', ' ']]
+    winner = play_game(board)
+    assert winner == 'X'

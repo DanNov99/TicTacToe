@@ -27,3 +27,6 @@ def win_or_draw(board):
     if (board[0][0] == 'O' and board[1][1] == 'O' and board[2][2] == 'O') or (board[0][2] == 'O' and board[1][1] == 'O' and board[2][0] == 'O'):
         return 'O'
     return None
+
+def play_game(board):
+    pass

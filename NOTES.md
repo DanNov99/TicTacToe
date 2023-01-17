@@ -20,3 +20,7 @@
 ## Pomodoro 5
 ~~ - TODO: Create test and function that decides if there is a winner or is it a draw ~~ 
 ~~ - TODO: Make it green ~~ 
+
+## Pomodoro 6
+~ - TODO: Create test and function that runs the game and uses the function that i created~~ 
+~ - TODO: Make it green and functional ~~ 
