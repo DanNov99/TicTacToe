@@ -47,6 +47,7 @@ def play_game(board):
             if print_board:
                 print_board(board)
             return None
+        current_player = 'O' if current_player == 'X' else 'X'
 
 def main():
     board = [[' ', ' ', ' '],

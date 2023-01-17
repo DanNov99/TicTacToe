@@ -28,4 +28,5 @@
 ## Pomodoro 7 
 - TODO: Create test and function that runs the game and uses the function that i created - in progress
 - TODO: Make it green and functional - in progress
-- TODO: Create main and test the function in terminal and see if it works correctly
+~~ - TODO: Create main and test the function in terminal and see if it works correctly ~~
+~~ - TODO: It only puts 'X' so i need to implement switching it with 'O' ~~
