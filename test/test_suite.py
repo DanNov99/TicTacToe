@@ -1,12 +1,4 @@
-from kata_3.tictactoe import create_board, make_move, win_or_draw, play_game
-import pytest
-
-
-def test_create_board():
-    board = create_board()
-    assert len(board) == 3
-    assert all (len(row) == 3 for row in board)
-    assert all (all(cell == ' ' for cell in row) for row in board)
+from kata_3.tictactoe import make_move, win_or_draw, play_game
 
 def test_make_move():
     board = [[None, None, None],

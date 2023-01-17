@@ -1,8 +1,5 @@
 import random
 
-def create_board():
-    return [[' ' for _ in range(3)] for _ in range(3)]
-
 def make_move(board,player):
     available_moves = [(x,y) for x in range(3) for y in range(3) if board[x][y] == ' ']
     if not available_moves:
@@ -42,7 +39,7 @@ def play_game(board):
                 print_board(board)
             return winner
         move = make_move(board, current_player)
-        if move == None:
+        if winner == None and move == None:
             print("It's a draw")
             if print_board:
                 print_board(board)
