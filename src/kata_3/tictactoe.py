@@ -29,4 +29,4 @@ def win_or_draw(board):
     return None
 
 def play_game(board):
-    return 'X'
+    return win_or_draw(board)
