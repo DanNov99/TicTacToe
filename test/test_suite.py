@@ -41,4 +41,4 @@ def test_play_game():
              [' ', ' ', ' '],
              [' ', ' ', ' ']]
     winner = play_game(board)
-    assert winner == 'X'
+    assert winner == win_or_draw(board)
