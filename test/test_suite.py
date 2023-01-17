@@ -1,4 +1,6 @@
-from kata_3.tictactoe import make_move, win_or_draw, play_game
+from kata_3.tictactoe import make_move, win_or_draw, play_game, main
+import io 
+from contextlib import redirect_stdout 
 
 def test_make_move():
     board = [[None, None, None],
@@ -34,3 +36,14 @@ def test_play_game():
              [None, None, None]]
     winner = play_game(board)
     assert winner in ['X', 'O', None]
+
+def test_main(): 
+    board = [['X', 'O', 'X'],
+             [' ', ' ', ' '],
+             [' ', ' ', ' ']]
+    f = io.StringIO()
+    with redirect_stdout(f):
+        main()
+    captured = f.getvalue()
+    expected_output = "The winner is: X\n"
+    assert captured.strip() == expected_output.strip()

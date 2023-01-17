@@ -29,7 +29,7 @@ def print_board(board):
     for x in board:
         print(x)
 
-def play_game(board):
+def play_game(board, print_board =None):
     current_player = 'X'
     winner = None
     while not winner:
