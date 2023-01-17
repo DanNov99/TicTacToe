@@ -35,5 +35,6 @@
 ~~ - TODO: Create test and function that runs the game and uses the function that i created ~~
 ~~ - TODO: Make it green and functional ~~
 
-## Pomodoro
+## Pomodoro 9
 ~~ - TODO: Increasing coverage (main function) ~~
+   - TODO: Increasing coverage (print_board function)
