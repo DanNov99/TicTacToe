@@ -42,8 +42,20 @@ def play_game(board):
                 print_board(board)
             return winner
         move = make_move(board, current_player)
-        if winner == None and move == None:
+        if move == None:
             print("It's a draw")
             if print_board:
                 print_board(board)
             return None
+
+def main():
+    board = [[' ', ' ', ' '],
+             [' ', ' ', ' '],
+             [' ', ' ', ' ']]   
+    winner = play_game(board)
+    if winner != None:
+        print(f"The winner is: {winner}")
+    else:
+        print("It's draw")
+if __name__ == "__main__":
+    main()

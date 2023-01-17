@@ -22,5 +22,10 @@
 ~~ - TODO: Make it green ~~ 
 
 ## Pomodoro 6
-~ - TODO: Create test and function that runs the game and uses the function that i created~~ 
-~ - TODO: Make it green and functional ~~ 
+- TODO: Create test and function that runs the game and uses the function that i created - in progress but not finished (moving to next pomodoro)
+- TODO: Make it green and functional - in progress but not finished (moving to next pomodoro)
+
+## Pomodoro 7 
+- TODO: Create test and function that runs the game and uses the function that i created - in progress
+- TODO: Make it green and functional - in progress
+- TODO: Create main and test the function in terminal and see if it works correctly
