@@ -28,14 +28,22 @@ def win_or_draw(board):
         return 'O'
     return None
 
+def print_board(board):
+    for x in board:
+        print(x)
+
 def play_game(board):
     current_player = 'X'
     winner = None
     while not winner:
         winner = win_or_draw(board)
         if winner:
+            if print_board:
+                print_board(board)
             return winner
         move = make_move(board, current_player)
-        if move == None:
+        if winner == None and move == None:
             print("It's a draw")
+            if print_board:
+                print_board(board)
             return None
