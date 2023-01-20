@@ -29,7 +29,7 @@ def print_board(board):
     for x in board:
         print(x)
 
-def play_game(board, print_board =None):
+def play_game(board, print_board= None):
     current_player = 'X'
     winner = None
     while not winner:
@@ -45,11 +45,14 @@ def play_game(board, print_board =None):
             return None
         current_player = 'O' if current_player == 'X' else 'X'
 
-def main(board):  
+def main(board): 
     winner = play_game(board)
     if winner != None:
         print(f"The winner is: {winner}")
     else:
         print("It's draw")
 if __name__ == "__main__":
-    main()
+    board = [[' ', ' ', ' '],
+             [' ', ' ', ' '],
+             [' ', ' ', ' ']]
+    main(board) 
