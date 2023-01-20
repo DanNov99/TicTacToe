@@ -45,10 +45,7 @@ def play_game(board, print_board =None):
             return None
         current_player = 'O' if current_player == 'X' else 'X'
 
-def main():
-    board = [[' ', ' ', ' '],
-             [' ', ' ', ' '],
-             [' ', ' ', ' ']]   
+def main(board):  
     winner = play_game(board)
     if winner != None:
         print(f"The winner is: {winner}")

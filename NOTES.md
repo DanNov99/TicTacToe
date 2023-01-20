@@ -38,3 +38,6 @@
 ## Pomodoro 9
 ~~ - TODO: Increasing coverage (main function) ~~
    - TODO: Increasing coverage (print_board function)
+
+## Pomodoro 10
+~~ - TODO: Refactoring function and test of main function ~~
