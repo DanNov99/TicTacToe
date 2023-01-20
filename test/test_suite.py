@@ -46,7 +46,7 @@ def test_main():
         main(board)
     captured = f.getvalue()
     winner = play_game(board)
-    expected_output = f"The winner is: {winner}\n" if winner else "It's a draw\n"
+    expected_output = f"The winner is: {winner}\n" if winner else "It's draw\n"
     assert captured.strip() == expected_output.strip()
 
 
