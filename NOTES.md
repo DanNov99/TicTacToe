@@ -41,3 +41,6 @@
 
 ## Pomodoro 10
 ~~ - TODO: Refactoring function and test of main function ~~
+
+## Pomodoro 11
+~~ - TODO: Refactoring test_print_board and make it green ~~

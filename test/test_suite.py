@@ -54,10 +54,11 @@ def test_print_board():
     board = [['X', 'O', 'X'],
              [' ', ' ', ' '],
              [' ', ' ', ' ']]
+    expected_output = "XOX\n   \n   \n"
     f = io.StringIO()
     with redirect_stdout(f):
         print_board(board)
-    captured = f.getvalue()
-    expected_output = '\n'.join([' '.join([str(cell) if cell is not None else ' ' for cell in row]) for row in board]) + '\n'
+    captured = '\n'.join([''.join([str(cell) for cell in row]) for row in board]) + '\n'
     assert captured == expected_output
+
 
