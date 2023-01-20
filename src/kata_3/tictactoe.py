@@ -40,7 +40,6 @@ def play_game(board, print_board =None):
             return winner
         move = make_move(board, current_player)
         if winner == None and move == None:
-            print("It's a draw")
             if print_board:
                 print_board(board)
             return None
