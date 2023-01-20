@@ -44,3 +44,6 @@
 
 ## Pomodoro 11
 ~~ - TODO: Refactoring test_print_board and make it green ~~
+
+## Pomodoro 12
+- TODO: Reach 100 % in coverage

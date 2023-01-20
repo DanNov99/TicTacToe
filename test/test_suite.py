@@ -1,15 +1,29 @@
 from kata_3.tictactoe import make_move, win_or_draw, play_game, main, print_board
 import io 
 from contextlib import redirect_stdout 
+import unittest
+import unittest.mock
+from unittest.mock import patch, mock_open
 
 def test_make_move():
     board = [[None, None, None],
              [None, None, None],
              [None, None, None]]
-    move = make_move(board, 'X')
+    with patch("kata_3.tictactoe.random.choice", return_value=(1,1)):
+        move = make_move(board, 'X')
     assert move in [(0,0), (0,1), (0,2), (1,0), (1,1), (1,2), (2,0), (2,1), (2,2)] or move == None
     if move is not None:
         assert board[move[0]][move[1]]== 'X'
+
+def test_make_move_no_valid_moves_available():
+    board = [['O', 'X', 'X'],
+             ['X', 'O', 'X'],
+             ['O', 'X', 'O']]
+    player = 'X'
+    assert make_move(board, player) == None
+    assert board == [['O', 'X', 'X'],
+                     ['X', 'O', 'X'],
+                     ['O', 'X', 'O']]
 
 def test_win_or_draw():
     board = [['X', 'X', 'X'],
@@ -18,9 +32,45 @@ def test_win_or_draw():
     winner = win_or_draw(board)
     assert winner == 'X'
 
+    board = [['X', 'O', 'X'],
+             [None, 'X', 'O'],
+             ['O', None, 'X']]
+    winner = win_or_draw(board)
+    assert winner == 'X'
+
+    board = [['X', 'O', 'X'],
+             [None, 'X', 'O'],
+             ['X', None, 'O']]
+    winner = win_or_draw(board)
+    assert winner == 'X'
+
+    board = [['X', 'O', 'X'],
+             [None, 'O', 'X'],
+             ['O', None, 'X']]
+    winner = win_or_draw(board)
+    assert winner == 'X'
+
     board = [['O', 'X', 'X'],
              ['X', 'O', 'X'],
              ['O', 'X', 'O']]
+    winner = win_or_draw(board)
+    assert winner == 'O'
+
+    board = [['X', 'O', 'X'],
+             ['X', 'O', 'X'],
+             [None, 'O', 'O']]
+    winner = win_or_draw(board)
+    assert winner == 'O'
+
+    board = [['X', 'O', 'O'],
+             ['X', 'O', 'X'],
+             ['O', 'X', 'X']]
+    winner = win_or_draw(board)
+    assert winner == 'O'
+
+    board = [['O', 'O', 'O'],
+             ['X', None, 'X'],
+             ['O', 'X', 'X']]
     winner = win_or_draw(board)
     assert winner == 'O'
 
@@ -45,11 +95,46 @@ def test_main():
     with redirect_stdout(f):
         main(board)
     captured = f.getvalue()
+    captured = captured[captured.index("The winner is: "):]
     winner = play_game(board)
     expected_output = f"The winner is: {winner}\n" if winner else "It's draw\n"
     assert captured.strip() == expected_output.strip()
+    
+class TestMain(unittest.TestCase):
+    def test_main_mock_1(self):
+        with patch('builtins.print') as mocked_print:
+            board = [[' ', ' ', ' '],
+                     [' ', ' ', ' '],
+                     [' ', ' ', ' ']]
+            main(board)
+            winner = play_game(board)
+            if winner != None:
+                mocked_print.assert_called_with(f"The winner is: {winner}")
+            else:
+                mocked_print.assert_called_with("It's draw")
 
+class TestMainDraw(unittest.TestCase):
+    def test_main_mock_2(self):
+        with patch('builtins.print') as mocked_print:
+            board = [['O', 'O', 'X'],
+                     ['X', 'X', 'O'],
+                     ['O', 'X', 'X']]
+            main(board)
+            mocked_print.assert_called_with("It's draw")
 
+class TestMainBoard(unittest.TestCase):
+    def test_main_mock_3(self):
+        with patch('builtins.print') as mocked_print_board:
+            board = [['X', 'O', 'X'],
+                     [' ', ' ', ' '],
+                     [' ', ' ', ' ']]
+            main(board)
+            mocked_print_board.assert_called_once()
+            assert board == [['X', 'O', 'X'],
+                             [' ', ' ', ' '],
+                             [' ', ' ', ' ']]
+
+  
 def test_print_board():
     board = [['X', 'O', 'X'],
              [' ', ' ', ' '],
