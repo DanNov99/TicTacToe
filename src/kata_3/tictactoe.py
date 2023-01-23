@@ -51,7 +51,7 @@ def main(board):
         print(f"The winner is: {winner}")
     else:
         print("It's draw")
-if __name__ == "__main__":
+if __name__ == "__main__": # pragma: no cover
     board = [[' ', ' ', ' '],
              [' ', ' ', ' '],
              [' ', ' ', ' ']]

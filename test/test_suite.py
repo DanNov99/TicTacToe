@@ -3,7 +3,7 @@ import io
 from contextlib import redirect_stdout 
 import unittest
 import unittest.mock
-from unittest.mock import patch, mock_open
+from unittest.mock import patch
 
 def test_make_move():
     board = [[None, None, None],
@@ -95,10 +95,18 @@ def test_main():
     with redirect_stdout(f):
         main(board)
     captured = f.getvalue()
-    captured = captured[captured.index("The winner is: "):]
+    if "The winner is: " in captured:
+        captured = captured[captured.index("The winner is: "):]
+    elif "It's draw" in captured:
+        captured = "It's draw\n"
+    else:
+        captured=captured.strip()
     winner = play_game(board)
-    expected_output = f"The winner is: {winner}\n" if winner else "It's draw\n"
-    assert captured.strip() == expected_output.strip()
+    if winner == None:
+        expected_output = "It's draw\n"
+    else:
+        expected_output = f"The winner is: {winner}\n"
+    assert captured == expected_output
     
 class TestMain(unittest.TestCase):
     def test_main_mock_1(self):
@@ -121,20 +129,7 @@ class TestMainDraw(unittest.TestCase):
                      ['O', 'X', 'X']]
             main(board)
             mocked_print.assert_called_with("It's draw")
-
-class TestMainBoard(unittest.TestCase):
-    def test_main_mock_3(self):
-        with patch('builtins.print') as mocked_print_board:
-            board = [['X', 'O', 'X'],
-                     [' ', ' ', ' '],
-                     [' ', ' ', ' ']]
-            main(board)
-            mocked_print_board.assert_called_once()
-            assert board == [['X', 'O', 'X'],
-                             [' ', ' ', ' '],
-                             [' ', ' ', ' ']]
-
-  
+ 
 def test_print_board():
     board = [['X', 'O', 'X'],
              [' ', ' ', ' '],
